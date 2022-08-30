@@ -24,7 +24,8 @@ target_shape = (200, 200)
 ## Load the dataset
 """
 
-main_images_folder_path = "main_img_0810_for_feature_map"
+input_img_folder = 'main_img_0810'
+main_images_folder_path = input_img_folder + "_for_feature_map"
 
 
 """
@@ -232,7 +233,7 @@ class SiameseModel(Model):
 siamese_model = SiameseModel(siamese_network)
 siamese_model.compile(optimizer=optimizers.Adam(0.0001))
 
-siamese_model = keras.models.load_model('momo_clothes_similarity_model') # 讀取計算相似度的 model
+siamese_model = keras.models.load_model('momo_16_wan_similarity_model') # 讀取計算相似度的 model
 
 # get the image list
 main_images_list = os.listdir(main_images_folder_path)
@@ -250,9 +251,8 @@ for main_image_path in main_images_list:
     main_embedding = embedding(main_image)
     output_main_json[main_image_path] = main_embedding.numpy().tolist()[0]
     print('processing:', main_image_path)
-'''
+
 # write the embedding feature vectors of the whole dataset
-with open('momo_16_wan_cloth_main_results_0823.json', 'w') as mmm:
+with open('feature_map_results.json', 'w') as mmm:
     json.dump(output_main_json, mmm)
     mmm.close()
-'''

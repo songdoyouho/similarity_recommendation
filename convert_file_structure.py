@@ -67,18 +67,18 @@ print('no_main_img_files:', no_main_img_files)
 print('sub_category_is_invisible:', sub_category_is_invisible)
 print(len(no_json_files), len(no_attributes_files), len(no_main_img_files), len(folder_list), len(sub_category_is_invisible), pass_count)
 
-os.makedirs('momo_no_json_file', exist_ok=True)
+os.makedirs('no_json_file', exist_ok=True)
 for item in no_json_files:
-    shutil.move(input_attr_folder+'/'+item, 'momo_no_json_file/'+item)
+    shutil.move(input_attr_folder+'/'+item, 'no_json_file/'+item)
 
-os.makedirs('momo_empty_attribute', exist_ok=True)
+os.makedirs('empty_attribute', exist_ok=True)
 for item in no_attributes_files:
-    shutil.move(input_attr_folder+'/'+item, 'momo_empty_attribute/'+item)
+    shutil.move(input_attr_folder+'/'+item, 'empty_attribute/'+item)
 
-os.makedirs('momo_no_img_file', exist_ok=True)
+os.makedirs('no_img_file', exist_ok=True)
 for item in no_main_img_files:
-    shutil.move(input_attr_folder+'/'+item, 'momo_no_img_file/'+item)
+    shutil.move(input_attr_folder+'/'+item, 'no_img_file/'+item)
 
-os.makedirs('momo_attr_subcategory_invisible', exist_ok=True)
+os.makedirs('attr_subcategory_invisible', exist_ok=True)
 for item in sub_category_is_invisible:
-    shutil.move(input_attr_folder+'/'+item, 'momo_attr_subcategory_invisible/'+item)
+    shutil.move(input_attr_folder+'/'+item, 'attr_subcategory_invisible/'+item)

@@ -53,11 +53,11 @@ class_map_dict = {'hoodie':1,
 start_time = time.time()
 
 # 讀要被檢查的圖片的 feature map 
-with open('momo_16_wan_cloth_main_results_0823.json', 'r') as iii: # momo_cloth_inference_results
+with open('feature_map_results.json', 'r') as iii: # momo_cloth_inference_results
     inference_results = json.load(iii)
     iii.close()
 # 讀整個資料庫的 feature map
-with open('momo_16_wan_cloth_main_results_0823.json', 'r') as mmm:
+with open('feature_map_results.json', 'r') as mmm:
     main_results = json.load(mmm)
     mmm.close()
 
@@ -65,7 +65,7 @@ item_features_dict = {}
 category_feature_map_list = [[] for i in range(78)]
 
 # 讀答案，得到圖片的屬性及子款式
-with open('answer_16_wan_momo_cloth_0823.csv','r',encoding='big5',newline='') as csvfile:
+with open('answer.csv','r',encoding='big5',newline='') as csvfile:
     rrr = csv.reader(csvfile)
 
     all_rows = []
@@ -149,7 +149,7 @@ for key, value in inference_results.items():
 
 print('parsing done!')
 
-top40 = open('momo_16_wan_top40_0823.csv', 'w', newline='')
+top40 = open('similarity_recommendation.csv', 'w', newline='')
 top40_writer = csv.writer(top40)
 
 # 製作第一行
