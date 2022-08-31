@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # 執行清理資料集
 python convert_file_structure.py
 
@@ -8,4 +7,7 @@ python convert_file_structure.py
 python produce_topkids_and_answer_16_wan.py
 
 # 執行獲得 feature map json 檔案
+python inference_siamese_network.py
+
+# 執行獲得相似推薦結果
 python get_similar_results.py
