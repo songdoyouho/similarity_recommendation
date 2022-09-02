@@ -46,7 +46,7 @@ class_dict = {'hoodie':1,
 'dress':42,
 'top':43}
 
-input_attr_folder = 'momo_attr_0810'
+input_attr_folder = 'momo_attr'
 
 topk = open('topk_ids.csv', 'w', newline='')
 topk_writer = csv.writer(topk)
@@ -81,7 +81,7 @@ for json_file in json_list:
                 print(data['result']['cloth_attr']['upper']['pattern_size']) # 圖案大小
                 print(data['result']['cloth_attr']['upper']['sleeve']) # 袖長
                 print(data['result']['cloth_attr']['upper']['sub_category']) # 服飾子款式
-                print(data['result']['cloth_loc']['upper']) # bbox 位置
+                #print(data['result']['cloth_loc']['upper']) # bbox 位置
                 print(json_file)
 
                 topk_writer.writerow([json_file + '.jpg', class_dict[data['result']['cloth_attr']['upper']['sub_category']]])
@@ -99,7 +99,7 @@ for json_file in json_list:
                 print(data['result']['cloth_attr']['full']['pattern_size']) # 圖案大小
                 print(data['result']['cloth_attr']['full']['sleeve']) # 袖長
                 print(data['result']['cloth_attr']['full']['sub_category']) # 服飾子款式
-                print(data['result']['cloth_loc']['full']) # bbox 位置
+                #print(data['result']['cloth_loc']['full']) # bbox 位置
                 print(json_file)
 
                 topk_writer.writerow([json_file + '.jpg', class_dict[data['result']['cloth_attr']['full']['sub_category']]])
@@ -115,7 +115,7 @@ for json_file in json_list:
                 print(data['result']['cloth_attr']['lower']['color'][0].strip(' 100%')) # 顏色
                 print(data['result']['cloth_attr']['lower']['pattern_size']) # 圖案大小
                 print(data['result']['cloth_attr']['lower']['sub_category']) # 服飾子款式
-                print(data['result']['cloth_loc']['lower']) # bbox 位置
+                #print(data['result']['cloth_loc']['lower']) # bbox 位置
                 print(json_file)
 
                 topk_writer.writerow([json_file + '.jpg', class_dict[data['result']['cloth_attr']['lower']['sub_category']]])

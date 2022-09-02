@@ -24,7 +24,7 @@ target_shape = (200, 200)
 ## Load the dataset
 """
 
-input_img_folder = 'main_img_0810'
+input_img_folder = 'main_img'
 main_images_folder_path = input_img_folder + "_for_feature_map"
 
 

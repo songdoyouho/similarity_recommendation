@@ -2,8 +2,8 @@ import os
 import json
 import shutil
 
-input_img_folder = 'main_img_0810'
-input_attr_folder = 'momo_attr_0810'
+input_img_folder = 'main_img'
+input_attr_folder = 'momo_attr'
 output_for_feature_map = input_img_folder + '_for_feature_map'
 os.makedirs(output_for_feature_map, exist_ok=True)
 
@@ -67,6 +67,10 @@ print('no_attributes_files:', no_attributes_files)
 print('no_main_img_files:', no_main_img_files)
 print('sub_category_is_invisible:', sub_category_is_invisible)
 print(len(no_json_files), len(no_attributes_files), len(no_main_img_files), len(folder_list), len(sub_category_is_invisible), pass_count)
+
+output_json = {'no_json_files':no_json_files, 'no_attributes_files':no_attributes_files, 'no_main_img_files':no_main_img_files, 'sub_category_is_invisible':sub_category_is_invisible, 'pass_files':pass_files}
+with open("cleaned_data_result.json", "w") as outfile:
+    json.dump(output_json, outfile)
 
 os.makedirs('momo_no_json_file', exist_ok=True)
 for item in no_json_files:
